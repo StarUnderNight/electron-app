@@ -5,7 +5,8 @@
     "vitest.config.*",
     "cypress.config.*",
     "nightwatch.conf.*",
-    "playwright.config.*"
+    "playwright.config.*",
+    "plugins/**/*.ts", //配置插件
   ],
   "compilerOptions": {
     "composite": true,
