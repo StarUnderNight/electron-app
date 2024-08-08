@@ -1,5 +1,6 @@
 // electron主进程
 import { app, BrowserWindow} from "electron"
+import * as process from "process";
 
 app.whenReady().then(() => {
     const win = new BrowserWindow({
@@ -12,5 +13,11 @@ app.whenReady().then(() => {
         }
     })
 
-    // win.loadURL()
+    if (process.argv[2]) {
+        // idx0:require('electron'), idx1:"dist/background.js", idx2:ipAddr
+        win.loadURL(process.argv[2])  // 开发环境，文件在热更新
+    } else {
+        win.loadFile("index.html")  // 生产环境，使用的静态文件
+    }
+
 })
