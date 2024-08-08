@@ -13,6 +13,8 @@ app.whenReady().then(() => {
         }
     })
 
+    // win.webContents.openDevTools()
+
     if (process.argv[2]) {
         // idx0:require('electron'), idx1:"dist/background.js", idx2:ipAddr
         win.loadURL(process.argv[2])  // 开发环境，文件在热更新
